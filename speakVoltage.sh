@@ -9,4 +9,5 @@ then
 fi
 
 
-echo "Current voltage is $1 volts!" | festival --tts 
+echo "Current voltage is $1 volts!" | festival --tts
+ 

@@ -12,13 +12,13 @@ email1=$2
 email2=$3
 
 
-# If we can get the site and there is an  "</html>" we assume it is up and running
-if (/usr/bin/wget $target --timeout 10 -O - 2>/dev/null  | grep "</html>") then
-      echo "Website $target is UP!"
+# If we can get the site and there is an  "</h1>" we assume it is up and running
+if (/usr/bin/wget $target --timeout 10 -O - 2>/dev/null  | grep "</h1>") then
+      echo "Website $target is UP"
 else
-      echo "Website $target is DOWN!" | mail -s "The site: $target is down" $email1
+      echo "Website $target is DOWN" | mail -s "The site: $target is down" $email1
       if [ -n "$email2" ]; then
-        echo "Website $target is DOWN!" | mail -s "The site: $target is down" $email2 
+        echo "Website $target is DOWN" | mail -s "The site: $target is down" $email2 
       fi
 fi
 

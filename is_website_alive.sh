@@ -14,7 +14,7 @@ email2=$3
 temp=$(/usr/bin/wget $target --timeout 10 -O - 2>/dev/null  | grep "</h1>")
 
 # If we can get the site and there is an  "</h1>" we assume it is up and running
-if [ -z $temp ]; then 
+if [ -z "$temp" ]; then 
       echo "Website $target is DOWN" | mail -s "The site: $target is down" $email1
       if [ -n "$email2" ]; then
         echo "Website $target is DOWN" | mail -s "The site: $target is down" $email2 
